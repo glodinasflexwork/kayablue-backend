@@ -1,9 +1,9 @@
 [phases.setup]
-nixPkgs = ["python310", "python310Packages.pip", "ghostscript"]
+aptPkgs = ["ghostscript"]
 
 [phases.install]
-cmds = ["python3.10 -m pip install -r requirements.txt"]
+cmds = ["pip install -r requirements.txt"]
 
 [start]
-cmd = "python3.10 -m uvicorn main:app --host 0.0.0.0 --port $PORT"
+cmd = "python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
 
